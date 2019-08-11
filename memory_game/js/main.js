@@ -1,6 +1,27 @@
 console.log('Up and running!');
 
-var cards = ['queen', 'queen', 'king', 'king'];
+var cards = [
+  {
+    rank: 'queen',
+    suit: 'hearts',
+    cardImage: 'images/queen-of-hearts.png'
+  },
+  {
+    rank: 'queen',
+    suit: 'diamonds',
+    cardImage: 'images/queen-of-diamonds.png'
+  },
+  {
+    rank: 'king',
+    suit: 'hearts',
+    cardImage: 'images/king-of-hearts.png'
+  },
+  {
+    rank: 'king',
+    suit: 'diamonds',
+    cardImage: 'images/king-of-diamonds.png'
+  }
+];
 
 var cardsInPlay = [];
 
@@ -17,12 +38,17 @@ function checkForMatch() {
 
 function flipCard(cardId) {
   let currentCard = cards[cardId];
-  console.log('User flipped ' + currentCard);
+  console.log('User flipped ' + currentCard.rank);
+  console.log(currentCard.cardImage);
+  console.log(currentCard.suit);
   cardsInPlay.push(currentCard);
   checkForMatch();
 }
 
+console.log(cards[0]);
+
 flipCard(0);
 flipCard(2);
-flipCard(1);
-flipCard(3);
+
+// object for each card to store name, suit, image
+// access values not from array, but from specific card object
